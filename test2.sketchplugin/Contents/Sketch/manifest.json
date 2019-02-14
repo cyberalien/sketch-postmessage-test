@@ -1,0 +1,28 @@
+{
+  "name": "test2",
+  "description": "Test plugin",
+  "homepage": "https://iconify.design/",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Test 2",
+      "identifier": "test2",
+      "script": "add-icon.js",
+      "shortcut": "ctrl shift t"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      "test2"
+    ]
+  },
+  "version": "0.0.1",
+  "identifier": "test2",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/cyberalien/sketch-test/master/.appcast.xml",
+  "author": "Vjacheslav Trushkin",
+  "authorEmail": "cyberalien@gmail.com"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "test2",
+  "description": "Testing postMessage bug",
+  "version": "0.0.1",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "test2",
+    "manifest": "src/manifest.json",
+    "main": "test2.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cyberalien/sketch-test.git"
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.11"
+  },
+  "author": "Vjacheslav Trushkin <cyberalien@gmail.com>",
+  "dependencies": {
+    "sketch-module-web-view": "^2.1.2"
+  }
+}
