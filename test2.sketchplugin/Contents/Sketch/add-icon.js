@@ -2389,7 +2389,7 @@ __webpack_require__.r(__webpack_exports__);
   });
   win.loadURL(__webpack_require__(/*! ../resources/index.html */ "./resources/index.html"));
   win.webContents.on('nativeLog', function (s) {
-    sketch.UI.message(s);
+    sketch_ui__WEBPACK_IMPORTED_MODULE_0___default.a.message(s);
   });
 });
 

@@ -14,6 +14,6 @@ export default function(context) {
     win.loadURL(require('../resources/index.html'));
 
     win.webContents.on('nativeLog', function(s) {
-        sketch.UI.message(s);
+        UI.message(s);
     });
 }
