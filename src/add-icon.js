@@ -1,18 +1,19 @@
-import sketch from 'sketch';
-import sketchDOM from 'sketch/dom';
 import UI from 'sketch/ui';
 import BrowserWindow from 'sketch-module-web-view';
 
 export default function(context) {
     var win;
 
-    win = new BrowserWindow({});
-    win.loadURL(require('../resources/index.html'));
-    win.webContents.on('testMessage', function(msg) {
-        log('got message');
-        UI.message('Got message!');
-        win.hide();
+    win = new BrowserWindow({
+        // even without these options result is the same
+        identifier: 'test2-window-' + Date.now(),
+        width: 800,
+        height: 800,
+        show: true
     });
+    win.loadURL(require('../resources/index.html'));
 
-    UI.message('Opened window without errors...');
+    win.webContents.on('nativeLog', function(s) {
+        sketch.UI.message(s);
+    });
 }

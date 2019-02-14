@@ -2359,7 +2359,7 @@ module.exports = function buildAPI(browserWindow, panel, webview) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/50249c1f51175b0bdec90b9ab5169b10.html").path();
+module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resources/543ede19cfd06da6ea370ffc90de6ef5.html").path();
 
 /***/ }),
 
@@ -2372,27 +2372,25 @@ module.exports = "file://" + context.plugin.urlForResourceNamed("_webpack_resour
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
-/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var sketch_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sketch/dom */ "sketch/dom");
-/* harmony import */ var sketch_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sketch_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sketch/ui */ "sketch/ui");
-/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sketch_ui__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
-/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sketch_module_web_view__WEBPACK_IMPORTED_MODULE_3__);
-
-
+/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch/ui */ "sketch/ui");
+/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_ui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
+/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (context) {
   var win;
-  win = new sketch_module_web_view__WEBPACK_IMPORTED_MODULE_3___default.a({});
-  win.loadURL(__webpack_require__(/*! ../resources/index.html */ "./resources/index.html"));
-  win.webContents.on('testMessage', function (msg) {
-    log('got message');
-    sketch_ui__WEBPACK_IMPORTED_MODULE_2___default.a.message('Got message!');
+  win = new sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1___default.a({
+    // even without these options result is the same
+    identifier: 'test2-window-' + Date.now(),
+    width: 800,
+    height: 800,
+    show: true
   });
-  sketch_ui__WEBPACK_IMPORTED_MODULE_2___default.a.message('Opened window without errors...');
+  win.loadURL(__webpack_require__(/*! ../resources/index.html */ "./resources/index.html"));
+  win.webContents.on('nativeLog', function (s) {
+    sketch.UI.message(s);
+  });
 });
 
 /***/ }),
@@ -2405,28 +2403,6 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 module.exports = require("events");
-
-/***/ }),
-
-/***/ "sketch":
-/*!*************************!*\
-  !*** external "sketch" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("sketch");
-
-/***/ }),
-
-/***/ "sketch/dom":
-/*!*****************************!*\
-  !*** external "sketch/dom" ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("sketch/dom");
 
 /***/ }),
 

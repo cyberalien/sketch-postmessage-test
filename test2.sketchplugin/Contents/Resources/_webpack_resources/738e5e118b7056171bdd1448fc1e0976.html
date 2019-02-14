@@ -15,20 +15,25 @@
     </style>
 </head>
 <body>
-    <a id="test" href="#">Close window</a>
+<a id="test" href="#">Close window</a>
 
-    <script>
-        window.setTimeout(function() {
-            var node = document.getElementById('test');
+<script>
+    window.setTimeout(function() {
+        var node = document.getElementById('test');
 
-            node.style.color = 'red';
-            node.addEventListener('click', function(event) {
-                console.log('clicked!');
+        node.style.color = '#f00';
+        node.addEventListener('click', function(event) {
+            console.log('clicked!');
+            try {
                 window.postMessage('testMessage', 'closing!');
+            } catch (err) {
+                console.log('Error!');
+                console.log(err);
+            }
 
-                event.preventDefault();
-            });
-        }, 100);
-    </script>
+            event.preventDefault();
+        });
+    }, 100);
+</script>
 </body>
 </html>
